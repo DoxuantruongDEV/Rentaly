@@ -1,0 +1,146 @@
+// Users table
+Table users {
+    id INT [pk, increment]
+    username VARCHAR(20) [not null]
+    name VARCHAR(255) [not null]
+    email VARCHAR(255) [not null, unique]
+    phone VARCHAR(20)
+    hour VARCHAR(50)
+    language VARCHAR(50)
+    password VARCHAR(255) [not null]
+    avatar VARCHAR(255)
+    address TEXT
+    dob DATE
+    created_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+    updated_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+// Cars table
+Table cars {
+    id INT [pk, increment]
+    name VARCHAR(255) [not null]
+    body VARCHAR(50)
+    seat VARCHAR(10)
+    door VARCHAR(10)
+    luggage VARCHAR(50)
+    horsepower VARCHAR(50)
+    likes_count INT [default: 0]
+    created_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+    updated_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+// Cars Details table
+Table cars_details {
+    car_id INT [pk, ref: > cars.id]
+    description TEXT
+    fuel_type VARCHAR(50)
+    engine_capacity VARCHAR(255)
+    year INT
+    mileage VARCHAR(255)
+    transmission VARCHAR(50)
+    drive VARCHAR(50)
+    fuel_economy VARCHAR(50)
+    exterior_color VARCHAR(50)
+    interior_color VARCHAR(50)
+    total_price DECIMAL(10, 2) [not null]
+    created_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+    updated_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+// Features table
+Table features {
+    id INT [pk, increment]
+    car_id INT [ref: > cars.id]
+    feature_name VARCHAR(255) [not null]
+    created_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+    updated_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+// Cars Image table
+Table cars_image {
+    id INT [pk, increment]
+    car_id INT [ref: > cars.id]
+    front_image VARCHAR(255)
+    rear_image VARCHAR(255)
+    right_image VARCHAR(255)
+    left_image VARCHAR(255)
+    removal_image VARCHAR(255)
+    created_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+    updated_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+// User Favorites table
+Table user_favorites {
+    id INT [pk, increment]
+    user_id INT [not null, ref: > users.id]
+    car_id INT [not null, ref: > cars.id]
+    created_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+    updated_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+// Bookings table
+Table bookings {
+    booking_id INT [pk, increment]
+    user_id INT [ref: > users.id]
+    vehicle_type VARCHAR(255)
+    pick_up_location VARCHAR(255)
+    destination VARCHAR(255)
+    pick_up_date DATE [not null]
+    pick_up_time TIME [not null]
+    return_date DATE [not null]
+    return_time TIME [not null]
+    name VARCHAR(255)
+    email VARCHAR(255)
+    phone VARCHAR(255)
+    message TEXT
+    status VARCHAR(50) [default: 'scheduled']
+    created_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+    updated_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+// Customer Feedback table
+Table customer_feedback {
+    id INT [pk, increment]
+    user_id INT [ref: > users.id]
+    your_name VARCHAR(255)
+    your_email VARCHAR(255)
+    your_phone VARCHAR(255)
+    your_description TEXT
+    created_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+    updated_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+// Momo Payments table
+Table momo_payments {
+    id INT [pk, increment]
+    user_id INT [ref: > users.id]
+    booking_id INT [ref: > bookings.booking_id]
+    car_id INT [ref: > cars.id]
+    order_id INT
+    request_id INT
+    amount DECIMAL(10, 2)
+    order_info VARCHAR(255)
+    order_type VARCHAR(50)
+    trans_id INT
+    result_code INT
+    message TEXT
+    response_time INT
+    extra_data VARCHAR(255)
+    payment_option VARCHAR(50)
+    payment_status VARCHAR(50) [default: 'pending']
+    created_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+    updated_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+// Admin table
+Table admin {
+    admin_id INT [pk, increment]
+    phone VARCHAR(20)
+    email VARCHAR(255) [not null, unique]
+    username VARCHAR(20) [not null, unique]
+    avatar VARCHAR(255)
+    password VARCHAR(255) [not null]
+    role VARCHAR(50) [default: 'admin']
+    created_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+    updated_at TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}

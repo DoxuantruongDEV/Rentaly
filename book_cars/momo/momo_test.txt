@@ -1,0 +1,93 @@
+No	Name	Number	Card Expdate	OTP	Test Case
+1	NGUYEN VAN A	9704 0000 0000 0018	03/07	OTP	Card Successful
+2	NGUYEN VAN A	9704 0000 0000 0026	03/07	OTP	Card Lock
+3	NGUYEN VAN A	9704 0000 0000 0034	03/07	OTP	Not Sufficient funds
+4	NGUYEN VAN A	9704 0000 0000 0042	03/07	OTP	Card Limit
+
+0384804325
+
+
+
+Dữ liệu trả về khi thanh toán thành công 
+
+?partnerCode=MOMOBKUN20180529
+&orderId=1718792803
+&requestId=1718792803
+&amount=5175000
+&orderInfo=Thanh+to%C3%A1n+xe+v%E1%BB%9Bi+cars_id%3A+2
+&orderType=momo_wallet
+&transId=4064729510
+&resultCode=0
+&message=Successful.
+&payType=napas
+&responseTime=1718792840915
+&extraData=
+&signature=16ffcba7e5e3179bb4c6f2810cdd46cc8c454b626dfa1c399b7f9e16525d58d2
+
+
+Dữ liệu trả về khi thanh toán thất bại 
+
+partnerCode=MOMOBKUN20180529
+&orderId=1718786182
+&requestId=1718786182
+&amount=6095000
+&orderInfo=Thanh+toán+qua+MoMo
+&orderType=momo_wallet
+&transId=1718786216760
+&resultCode=1006
+&message=Giao+dịch+bị+từ+chối+bởi+người+dùng.
+&payType=
+&responseTime=1718786216770
+&extraData=
+&signature=40b5d0d4c16bc45693dea98b82e1a98ec98a3265bb375ad1656198a200011687
+
+
+
+dữ liệu trả về khi submit 
+http://localhost/Rentaly/book_cars/momo_atm.php?car_id=1
+&amount=6095000
+&payment_method=momo_atm
+&PickupLocation=213
+&DropoffLocation=123
+&PickUpDate=June%2020%2C%202024
+&ReturnDate=June%2020%2C%202024
+&PickUpTime=08%3A30
+&ReturnTime=09%3A00
+
+
+
+dữ liệu thanh toán xong lưu vào csdl 
+
+bind_param('iiiiidssiiissss'
+, 4
+, '1718897756'
+, '1'
+, '1718897756'
+, '1718897756'
+, '6095000'
+, 'Thành to\xC3\xA1n xe ...'
+, 'momo_wallet'
+, '4065891304'
+, '0'
+, 'Thành công.'
+, '1718897803604'
+, 'napas'
+, 'completed') 
+
+
+
+dữ liệu trả về khi đặt xe
+http://localhost/Rentaly/book_cars/pay_success.php?
+partnerCode=MOMOBKUN20180529
+&orderId=1718942449
+&requestId=1718942449
+&amount=5750000
+&orderInfo=Thanh+to%C3%A1n+qua+MoMo
+&orderType=momo_wallet
+&transId=4066085394
+&resultCode=0
+&message=Successful.
+&payType=napas
+&responseTime=1718942494882
+&extraData=
+&signature=4f40ae905febfdf4319c26af42fd0b1b0db806121c1ae7d18c3bc156d7497367
