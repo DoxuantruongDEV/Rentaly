@@ -23,16 +23,16 @@ function saveBooking($conn, $data)
         $data['car_id'],
         $data['vehicle_type'],
         $data['pickup_location'],
-        $data['dropoff_location'],
+        $data['destination'],
         $data['pickup_date'],
-        $data['pick_up_time'],
+        $data['pickup_time'],
         $data['return_date'],
         $data['return_time'],
         $data['name'],
         $data['email'],
         $data['phone'],
         $data['message'],
-        $data['status'] // Dynamically bind the status parameter
+        $data['status']
     );
 
     if ($stmt->execute()) {
@@ -93,18 +93,18 @@ if ($payment_data_available) {
     // Prepare booking data
     $booking_data = [
         'user_id' => $user_id,
-        'car_id' => $payment_data['cars_id'],
+        'car_id' => $payment_data['car_id'],
         'vehicle_type' => 'car', // Assuming vehicle type is 'car'. Adjust if needed.
         'pickup_location' => $payment_data['pickup_location'],
-        'dropoff_location' => $payment_data['dropoff_location'],
+        'destination' => $payment_data['destination'],
         'pickup_date' => date('Y-m-d', strtotime($payment_data['pickup_date'])),
-        'pick_up_time' => $payment_data['PickUpTime'],
+        'pickup_time' => $payment_data['pickup_time'],
         'return_date' => date('Y-m-d', strtotime($payment_data['return_date'])),
-        'return_time' => $payment_data['ReturnTime'],
-        'name' => '', // You can fill this with user name if available
-        'email' => '', // You can fill this with user email if available
-        'phone' => '', // You can fill this with user phone if available
-        'message' => '',
+        'return_time' => $payment_data['return_time'],
+        'name' => $payment_data['name'],
+        'email' => $payment_data['email'],
+        'phone' => $payment_data['phone'],
+        'message' => $payment_data['message'],
         'status' => $booking_status
     ];
 
@@ -118,7 +118,7 @@ if ($payment_data_available) {
         $payment_save_data = [
             'user_id' => $user_id,
             'booking_id' => $booking_id,
-            'car_id' => $payment_data['cars_id'],
+            'car_id' => $payment_data['car_id'],
             'partner_code' => $_GET['partnerCode'],
             'order_id' => $_GET['orderId'],
             'request_id' => $_GET['requestId'],

@@ -4,7 +4,7 @@
         <?php
         include('config/config.php'); // Include your database configuration
 
-        $sql = "SELECT cars.id, cars.name, cars_details.total_price, cars_image.removal_image 
+        $sql = "SELECT cars.id AS car_id, cars.name, cars_details.total_price, cars_image.removal_image 
                 FROM cars 
                 JOIN cars_details ON cars.id = cars_details.car_id 
                 JOIN cars_image ON cars.id = cars_image.car_id";
@@ -15,9 +15,9 @@
             return (strpos($price, '.00') !== false) ? rtrim(rtrim($price, '0'), '.') : $price;
         }
         ?>
-        <select name="vehicle_type" id="vehicle_type" class="form-control" required onchange="updateCarId(this)">
+        <select name="car_id" id="vehicle_type" class="form-control" required>
             <?php while ($row = $result->fetch_assoc()) : ?>
-                <option value='<?php echo $row['id']; ?>' data-src='<?php echo $row['removal_image']; ?>'>
+                <option value='<?php echo $row['car_id']; ?>' data-src='<?php echo $row['removal_image']; ?>'>
                     <?php echo $row['name']; ?> - $<?php echo formatPrice($row['total_price']) ?>
                 </option>
             <?php endwhile; ?>
@@ -27,14 +27,14 @@
             <div class="col-lg-6">
                 <h5>Pick Up Location</h5>
                 <select name="pickup_location" id="pickup_location" class="form-control opt-1-disable" required>
-                    <option value='New York'>Enter your pickup location</option>
+                    <option value=''>Enter your pickup location</option>
                     <option value='New York'>New York</option>
                 </select>
             </div>
             <div class="col-lg-6">
                 <h5>Destination</h5>
                 <select name="destination" id="destination" class="form-control opt-1-disable" required>
-                    <option value='New York'>Enter your destination</option>
+                    <option value=''>Enter your destination</option>
                     <option value='New York'>New York</option>
                 </select>
             </div>
@@ -89,13 +89,3 @@
         <input type="submit" id="send_message" value="Submit" class="btn-main btn-fullwidth">
     </div>
 </form>
-<script>
-    function updateCarId(select) {
-        document.getElementById('car_id').value = select.value;
-    }
-
-    // Initialize the car ID when the page loads
-    document.addEventListener('DOMContentLoaded', function() {
-        updateCarId(document.getElementById('vehicle_type'));
-    });
-</script>
