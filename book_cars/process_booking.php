@@ -98,7 +98,13 @@ $data = array(
 $result = sendRequestToMoMo($endpoint, json_encode($data));
 $jsonResult = json_decode($result, true);
 
-header('Location: ' . $jsonResult['payUrl']);
+// Kiểm tra kết quả và redirect đến trang thanh toán của MoMo
+if (isset($jsonResult['payUrl'])) {
+    $_SESSION['payment_request_id'] = $requestId; // Lưu requestId vào session
+    header('Location: ' . $jsonResult['payUrl']);
+} else {
+    echo "Payment URL not found. Please try again.";
+}
 exit();
 
 function sendRequestToMoMo($endpoint, $jsonData)
