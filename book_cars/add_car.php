@@ -18,7 +18,7 @@ $sql_brand = "SELECT
             ci.left_image,
             cd.description,
             cd.fuel_type,
-            cd.engine,
+            cd.engine_capacity,
             cd.year,
             cd.mileage,
             cd.transmission,
@@ -55,7 +55,7 @@ if (isset($_POST['sbm'])) {
     $left_image_tmp = $_FILES['left_image']['tmp_name'];
     $description = $_POST['description'];
     $fuel_type = $_POST['fuel_type'];
-    $engine = $_POST['engine'];
+    $engine_capacity = $_POST['engine_capacity'];
     $year = $_POST['year'];
     $mileage = $_POST['mileage'];
     $transmission = $_POST['transmission'];
@@ -76,7 +76,7 @@ if (isset($_POST['sbm'])) {
     $sql2 = "INSERT INTO cars_image (car_id, front_image, rear_image, right_image, left_image) VALUES ('$car_id', '$front_image', '$rear_image', '$right_image', '$left_image')";
     $query2 = mysqli_query($conn, $sql2);
 
-    $sql3 = "INSERT INTO cars_details (car_id, description, fuel_type, engine, year, mileage, transmission, drive, fuel_economy, exterior_color, interior_color, total_price) VALUES ('$car_id', '$description', '$fuel_type', '$engine', '$year', '$mileage', '$transmission', '$drive', '$fuel_economy', '$exterior_color', '$interior_color', '$total_price')";
+    $sql3 = "INSERT INTO cars_details (car_id, description, fuel_type, engine_capacity, year, mileage, transmission, drive, fuel_economy, exterior_color, interior_color, total_price) VALUES ('$car_id', '$description', '$fuel_type', '$engine_capacity', '$year', '$mileage', '$transmission', '$drive', '$fuel_economy', '$exterior_color', '$interior_color', '$total_price')";
     $query3 = mysqli_query($conn, $sql3);
     move_uploaded_file($front_image_tmp, $front_image);
     move_uploaded_file($rear_image_tmp, $rear_image);
@@ -159,8 +159,8 @@ if (isset($_POST['sbm'])) {
                             <input type="text" class="form-control" id="fuel_type" name="fuel_type" placeholder="Enter Fuel Type" required />
                         </div>
                         <div class="mb-3">
-                            <label for="name" class="form-label">Engine</label>
-                            <input type="text" class="form-control" id="engine" name="engine" placeholder="Enter Engine" required />
+                            <label for="name" class="form-label">engine_capacity</label>
+                            <input type="text" class="form-control" id="engine_capacity" name="engine_capacity" placeholder="Enter engine_capacity" required />
                         </div>
                         <div class="mb-3">
                             <label for="door" class="form-label">Year</label>
