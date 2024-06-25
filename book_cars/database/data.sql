@@ -251,7 +251,7 @@ INSERT INTO
         updated_at
     )
 VALUES (
-        'Toyota Camry',
+        'Bentley',
         'Sedan',
         '5',
         '4',
@@ -262,7 +262,7 @@ VALUES (
         CURRENT_TIMESTAMP
     ),
     (
-        'Honda CR-V',
+        'VW Polo',
         'SUV',
         '5',
         '4',
@@ -273,7 +273,73 @@ VALUES (
         CURRENT_TIMESTAMP
     ),
     (
-        'Ford Mustang',
+        'Chevrolet Camaro',
+        'Sports Car',
+        '4',
+        '2',
+        '1',
+        '300',
+        3040,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        'Range Rover',
+        'Sports Car',
+        '4',
+        '2',
+        '1',
+        '300',
+        3040,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        'Ford Raptor',
+        'Sports Car',
+        '4',
+        '2',
+        '1',
+        '300',
+        3040,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        'Hyundai Staria',
+        'Sports Car',
+        '4',
+        '2',
+        '1',
+        '300',
+        3040,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        'Jeep Renegade',
+        'Sports Car',
+        '4',
+        '2',
+        '1',
+        '300',
+        3040,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        'Lexus',
+        'Sports Car',
+        '4',
+        '2',
+        '1',
+        '300',
+        3040,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        'Mini Cooper',
         'Sports Car',
         '4',
         '2',
@@ -283,7 +349,6 @@ VALUES (
         CURRENT_TIMESTAMP,
         CURRENT_TIMESTAMP
     );
-
 -- Insert data into cars_details table
 INSERT INTO
     cars_details (
@@ -349,8 +414,103 @@ VALUES (
         450.00,
         CURRENT_TIMESTAMP,
         CURRENT_TIMESTAMP
+    ),
+    (
+        4,
+        'The Ford Mustang is a powerful and iconic sports car, delivering thrilling performance and style.',
+        'Gasoline',
+        '5.0L',
+        2020,
+        '10000',
+        'Manual',
+        'RWD',
+        '20',
+        'Red',
+        'Black',
+        450.00,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        5,
+        'The Ford Mustang is a powerful and iconic sports car, delivering thrilling performance and style.',
+        'Gasoline',
+        '5.0L',
+        2020,
+        '10000',
+        'Manual',
+        'RWD',
+        '20',
+        'Red',
+        'Black',
+        450.00,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        6,
+        'The Ford Mustang is a powerful and iconic sports car, delivering thrilling performance and style.',
+        'Gasoline',
+        '5.0L',
+        2020,
+        '10000',
+        'Manual',
+        'RWD',
+        '20',
+        'Red',
+        'Black',
+        450.00,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        7,
+        'The Ford Mustang is a powerful and iconic sports car, delivering thrilling performance and style.',
+        'Gasoline',
+        '5.0L',
+        2020,
+        '10000',
+        'Manual',
+        'RWD',
+        '20',
+        'Red',
+        'Black',
+        450.00,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        8,
+        'The Ford Mustang is a powerful and iconic sports car, delivering thrilling performance and style.',
+        'Gasoline',
+        '5.0L',
+        2020,
+        '10000',
+        'Manual',
+        'RWD',
+        '20',
+        'Red',
+        'Black',
+        450.00,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        9,
+        'The Ford Mustang is a powerful and iconic sports car, delivering thrilling performance and style.',
+        'Gasoline',
+        '5.0L',
+        2020,
+        '10000',
+        'Manual',
+        'RWD',
+        '20',
+        'Red',
+        'Black',
+        450.00,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
     );
-
 -- Insert data into features table
 INSERT INTO
     features (car_id, feature_name)
@@ -359,8 +519,19 @@ VALUES (1, 'Air Conditioning'),
     (2, 'Sunroof'),
     (3, 'Leather Seats'),
     (3, 'Heated Seats'),
-    (2, 'Bluetooth Connectivity');
-
+    (4, 'Bluetooth Connectivity'),
+    (4, 'Air Conditioning'),
+    (5, 'Navigation System'),
+    (5, 'Sunroof'),
+    (6, 'Leather Seats'),
+    (6, 'Heated Seats'),
+    (7, 'Bluetooth Connectivity'),
+    (7, 'Air Conditioning'),
+    (8, 'Navigation System'),
+    (8, 'Sunroof'),
+    (9, 'Leather Seats'),
+    (9, 'Heated Seats'),
+    (9, 'Bluetooth Connectivity');
 -- Insert data into cars_image table
 INSERT INTO
     cars_image (
@@ -376,34 +547,93 @@ INSERT INTO
 VALUES (
         1,
         'images/cars/1.jpg',
-        'images/cars/2.jpg',
-        'images/cars/3.jpg',
-        'images/cars/4.jpg',
-        'images/cars-alt/5.png',
+        'images/cars/1,1.jpg',
+        'images/cars/1,2.jpg',
+        'images/cars/1,3.jpg',
+        'images/cars-alt/1.png',
         CURRENT_TIMESTAMP,
         CURRENT_TIMESTAMP
     ),
     (
         2,
-        'images/cars/5.jpg',
-        'images/cars/6.jpg',
-        'images/cars/7.jpg',
-        'images/cars/8.jpg',
-        'images/cars-alt/6.png',
+        'images/cars/2.jpg',
+        'images/cars/2,1.jpg',
+        'images/cars/2,2.jpg',
+        'images/cars/2,3.jpg',
+        'images/cars-alt/2.png',
         CURRENT_TIMESTAMP,
         CURRENT_TIMESTAMP
     ),
     (
         3,
-        'images/cars/9.jpg',
-        'images/cars/10.jpg',
-        'images/cars/11.jpg',
-        'images/cars/12.jpg',
+        'images/cars/3.jpg',
+        'images/cars/3,1.jpg',
+        'images/cars/3,2.jpg',
+        'images/cars/3,3.jpg',
+        'images/cars-alt/3.png',
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        4,
+        'images/cars/4.jpg',
+        'images/cars/4,1.jpg',
+        'images/cars/4,2.jpg',
+        'images/cars/4,3.jpg',
+        'images/cars-alt/4.png',
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        5,
+        'images/cars/5.jpg',
+        'images/cars/5,1.jpg',
+        'images/cars/5,2.jpg',
+        'images/cars/5,3.jpg',
+        'images/cars-alt/5.png',
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        6,
+        'images/cars/6.jpg',
+        'images/cars/6,1.jpg',
+        'images/cars/6,2.jpg',
+        'images/cars/6,3.jpg',
+        'images/cars-alt/6.png',
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        7,
+        'images/cars/7.jpg',
+        'images/cars/7,1.jpg',
+        'images/cars/7,2.jpg',
+        'images/cars/7,3.jpg',
         'images/cars-alt/7.png',
         CURRENT_TIMESTAMP,
         CURRENT_TIMESTAMP
+    ),
+    (
+        8,
+        'images/cars/8.jpg',
+        'images/cars/8,1.jpg',
+        'images/cars/8,2.jpg',
+        'images/cars/8,3.jpg',
+        'images/cars-alt/8.png',
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    ),
+    (
+        9,
+        'images/cars/9.jpg',
+        'images/cars/9,1.jpg',
+        'images/cars/9,2.jpg',
+        'images/cars/9,3.jpg',
+        'images/cars-alt/9.png',
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
     );
-
 -- Insert data into user_favorites table
 INSERT INTO
     user_favorites (user_id, car_id)

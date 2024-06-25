@@ -20,9 +20,9 @@ if ($user_id) {
     }
 }
 // Debugging: print session data
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
+// echo "<pre>";
+// print_r($_SESSION);
+// echo "</pre>";
 ?>
 
 <header class="transparent scroll-light has-topbar">
